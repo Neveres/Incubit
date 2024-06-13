@@ -20,7 +20,7 @@ export default function Home() {
     fetch("/graph.json")
       .then((response) => response.json())
       .then((data) => {
-        const nodesWithPositions = data.nodes.map((node: any) => ({
+        const nodesWithPositions = data.nodes.map((node: Incubit.Node) => ({
           ...node,
           position: [
             Math.random() * 10 - 5,
@@ -28,6 +28,7 @@ export default function Home() {
             Math.random() * 10 - 5,
           ],
         }));
+
         setGraph({ ...data, nodes: nodesWithPositions });
       });
   }, []);
