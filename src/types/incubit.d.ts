@@ -3,7 +3,7 @@ declare namespace Incubit {
     id: number;
     name: string;
     path: string;
-    position?: [number, number, number];
+    position: [number, number, number];
   }
 
   interface Edge {
